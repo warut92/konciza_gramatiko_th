@@ -1,26 +1,72 @@
 # ไวยากรณ์ภาษาเอสเปรันโต โดยสังเขป
 ## Konciza Gramatiko de Esperanto
 Warut Bunprasert
-
+---
 ### คำนำ
-เอกสารนี้เป็นการนำเสนอไวยากรณ์ระดับพื้นฐานของภาษาเอสเปรันโตเท่านั้น เรียบเรียง จาก Konciza Gramatiko de Esperanto ฉบับภาษาเอสเปรันโต ของเว็บไซต์เรียนภาษาเอสเปรันโต [lernu.net](https://dvd.ikso.net/lernu/lernu/eo/index.html) ในเวอร์ชั่นเก่า หากท่านต้องการศึกษาเพิ่มเติม สามารถศึกษาได้ที่ [PMEG](https://bertilow.com/pmeg/index.html)
 
-อย่างไรก็ตามเอกสารนี้ได้จัดทำโดยเวลาอันจำกัด เป็นไปไม่ได้เลยที่จะไม่มีข้อบกพร่อง  หากท่านพบข้อบกพร่องหรือมีข้อเสนอแนะอื่น ๆ ขอโปรดชี้แนะมายังกระผม เพื่อที่ครั้งต่อไปจะได้ปรับปรุงให้ดียิ่งขึ้น
+เอกสารนี้เป็นการนำเสนอไวยากรณ์ระดับพื้นฐานของภาษาเอสเปรันโตเท่านั้นสำหรับผู้ที่กำลังเริ่มเรียนภาษาเอสเปรันโต เอกสารนี้เรียบเรียง จาก Konciza Gramatiko de Esperanto ฉบับภาษาเอสเปรันโต จากเว็บไซต์เรียนภาษาเอสเปรันโต [lernu.net](https://dvd.ikso.net/lernu/lernu/eo/index.html) ในเวอร์ชั่นเก่า หากท่านมีความรู้ในระดับเบื้องต้นแล้วขอแนะนำให้ศึกษาเพิ่มเติมที่่ [PMEG](https://bertilow.com/pmeg/index.html)
 
 
 วรุฒ บุญประเสริฐ/ 25-09-2559
 
-แก้ไขครั้งที่สอง 05-03-2561
+Markdown/ 16-04-2566
 
-MD kun bildoj 16-04-2566
+---
+# สารบัญ
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [ไวยากรณ์ภาษาเอสเปรันโต โดยสังเขป](#-)
+	- [Konciza Gramatiko de Esperanto](#konciza-gramatiko-de-esperanto)
+		- [คำนำ](#)
+- [สารบัญ](#)
+	- [1. ตัวอักษร (La alfabeto)](#1-la-alfabeto)
+		- [สระ (Vokaloj)](#-vokaloj)
+		- [พยัญชนะ (Konsonantoj)](#-konsonantoj)
+		- [การเน้นเสียง (Akcento)](#-akcento)
+		- [สระประสม (Diftongo)](#-diftongo)
+	- [2. ชนิดของคำ (Vortklasoj)](#2-vortklasoj)
+	- [3. คำนำหน้านามชี้เฉพาะ (Difinita artikolo)](#3-difinita-artikolo)
+	- [4. พหูพจน์(Pluralo)](#4-pluralo)
+	- [5. กรรม (Objekto)](#5-objekto)
+	- [6. การเปรียบเทียบ (Komparado)](#6-komparado)
+	- [7. การแสดงความเป็นเจ้าของ (Posedo)](#7-posedo)
+	- [8. คำสรรพนาม (Pronomoj)](#8-pronomoj)
+		- [Si](#si)
+		- [Oni](#oni)
+	- [9. รูปแบบของกริยา (Verbformoj)](#9-verbformoj)
+		- [รูปแบบของกริยาที่มากกว่า 1 (Kompleksaj verbkonstruoj)](#-1-kompleksaj-verbkonstruoj)
+	- [10. กริยาวิเศษณ์ (Adverboj)](#10-adverboj)
+	- [11. คำบุพบท (Prepozicioj)](#11-prepozicioj)
+		- [การใช้ De](#-de)
+		- [การใช้ Da](#-da)
+		- [การใช้ Je](#-je)
+		- [ตัวลงท้าย -n แทนคำบุพบท](#-n-)
+	- [12.สันธาน (Konjunkcioj)](#12-konjunkcioj)
+		- [kaj – และ](#kaj-)
+		- [aŭ – หรือ](#a-)
+		- [sed – แต่](#sed-)
+	- [13.การแสดงทิศทางโดย –n (Direkto per –n)](#13-n-direkto-per-n)
+	- [14.ตัวเลข (Numeralo)](#14-numeralo)
+	- [15.ประโยคคำถาม (Demando)](#15-demando)
+		- [Ĉu](#u)
+	- [16. การปฏิเสธ (Negacio)](#16-negacio)
+		- [Ne - ไม่](#ne-)
+	- [17.Participo](#17participo)
+		- [Participo แสดงการกระทำ](#participo-)
+	- [Participo แสดงการถูกกระทำ](#participo-)
+	- [18. คำตาราง [^1] (Tabelvortoj)](#18-1-tabelvortoj)
+		- [Ĉi](#i)
+		- [Ajn](#ajn)
+		- [คำสรรพนามเชื่อมความ](#)
+	- [19. การสร้างคำ (Vortfarado)](#19-vortfarado)
+	- [20. อุปสรรคและปัจจัย (Prefiksoj kaj Sufiksoj)](#20-prefiksoj-kaj-sufiksoj)
+		- [อุปสรรค (Prefiksoj)](#-prefiksoj)
+		- [ปัจจัย (Sufiksoj)](#-sufiksoj)
+
+<!-- /TOC -->
 
 
 ---
-
-### สารบัญ
-
----
-
 
 ## 1. ตัวอักษร (La alfabeto)
 ตัวอักษรภาษาเอสเปรันโตมีทั้งหมด 28 ตัว ดังนี้
