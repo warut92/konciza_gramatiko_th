@@ -1,3 +1,56 @@
+<script>
+var c = function() {
+    return({
+        log: function(msg) {
+          consoleDiv = document.getElementById('console');
+          para = document.createElement('p');
+          text = document.createTextNode(msg);
+          para.appendChild(text);
+          consoleDiv.appendChild(para);
+        }
+    });
+}();
+
+window.onload = function () {
+    var toc = "";
+    var level = 0;
+    var maxLevel = 3;
+
+    document.getElementById("contents").innerHTML =
+        document.getElementById("contents").innerHTML.replace(
+            /<h([\d])>([^<]+)<\/h([\d])>/gi,
+            function (str, openLevel, titleText, closeLevel) {
+                if (openLevel != closeLevel) {
+				 c.log(openLevel)
+                    return str + ' - ' + openLevel;
+                }
+
+                if (openLevel > level) {
+                    toc += (new Array(openLevel - level + 1)).join("<ol>");
+                } else if (openLevel < level) {
+                    toc += (new Array(level - openLevel + 1)).join("</ol>");
+                }
+
+                level = parseInt(openLevel);
+
+                var anchor = titleText.replace(/ /g, "_");
+                toc += "<li><a href=\"#" + anchor + "\">" + titleText
+                    + "</a></li>";
+
+                return "<h" + openLevel + "><a name=\"" + anchor + "\">"
+                    + titleText + "</a></h" + closeLevel + ">";
+            }
+        );
+
+    if (level) {
+        toc += (new Array(level + 1)).join("</ol>");
+    }
+
+    document.getElementById("toc").innerHTML += toc;
+};
+
+</script>
+
 # ไวยากรณ์ภาษาเอสเปรันโต โดยสังเขป
 ## Konciza Gramatiko de Esperanto
 Warut Bunprasert
@@ -15,60 +68,6 @@ Markdown/ 16-04-2566
 
 ---
 # สารบัญ
-
-<!-- TOC START min:1 max:3 link:true asterisk:false update:true -->
-- [ไวยากรณ์ภาษาเอสเปรันโต โดยสังเขป](#ไวยากรณภาษาเอสเปรนโต-โดยสงเขป)
-  - [Konciza Gramatiko de Esperanto](#konciza-gramatiko-de-esperanto)
-    - [คำนำ](#คำนำ)
-- [สารบัญ](#สารบญ)
-  - [1. ตัวอักษร (La alfabeto)](#1-ตวอกษร-la-alfabeto)
-    - [สระ (Vokaloj)](#สระ-vokaloj)
-    - [พยัญชนะ (Konsonantoj)](#พยญชนะ-konsonantoj)
-    - [การเน้นเสียง (Akcento)](#การเนนเสยง-akcento)
-    - [สระประสม (Diftongo)](#สระประสม-diftongo)
-  - [2. ชนิดของคำ (Vortklasoj)](#2-ชนดของคำ-vortklasoj)
-  - [3. คำนำหน้านามชี้เฉพาะ (Difinita artikolo)](#3-คำนำหนานามชเฉพาะ-difinita-artikolo)
-  - [4. พหูพจน์(Pluralo)](#4-พหพจนpluralo)
-  - [5. กรรม (Objekto)](#5-กรรม-objekto)
-  - [6. การเปรียบเทียบ (Komparado)](#6-การเปรยบเทยบ-komparado)
-  - [7. การแสดงความเป็นเจ้าของ (Posedo)](#7-การแสดงความเปนเจาของ-posedo)
-  - [8. คำสรรพนาม (Pronomoj)](#8-คำสรรพนาม-pronomoj)
-    - [Si](#si)
-    - [Oni](#oni)
-  - [9. รูปแบบของกริยา (Verbformoj)](#9-รปแบบของกรยา-verbformoj)
-    - [รูปแบบของกริยาที่มากกว่า 1 (Kompleksaj verbkonstruoj)](#รปแบบของกรยาทมากกวา-1-kompleksaj-verbkonstruoj)
-  - [10. กริยาวิเศษณ์ (Adverboj)](#10-กรยาวเศษณ-adverboj)
-  - [11. คำบุพบท (Prepozicioj)](#11-คำบพบท-prepozicioj)
-    - [การใช้ De](#การใช-de)
-    - [การใช้ Da](#การใช-da)
-    - [การใช้ Je](#การใช-je)
-    - [ตัวลงท้าย -n แทนคำบุพบท](#ตวลงทาย--n-แทนคำบพบท)
-  - [12.สันธาน (Konjunkcioj)](#12สนธาน-konjunkcioj)
-    - [kaj – และ](#kaj--และ)
-    - [aŭ – หรือ](#aŭ--หรอ)
-    - [sed – แต่](#sed--แต)
-  - [13.การแสดงทิศทางโดย –n (Direkto per –n)](#13การแสดงทศทางโดย-n-direkto-per-n)
-  - [14.ตัวเลข (Numeralo)](#14ตวเลข-numeralo)
-  - [15.ประโยคคำถาม (Demando)](#15ประโยคคำถาม-demando)
-    - [Ĉu](#ĉu)
-  - [16. การปฏิเสธ (Negacio)](#16-การปฏเสธ-negacio)
-    - [Ne - ไม่](#ne---ไม)
-  - [17.Participo](#17participo)
-    - [Participo แสดงการกระทำ](#participo-แสดงการกระทำ)
-  - [Participo แสดงการถูกกระทำ](#participo-แสดงการถกกระทำ)
-  - [18. คำตาราง [^1] (Tabelvortoj)](#18-คำตาราง-1-tabelvortoj)
-    - [Ĉi](#ĉi)
-    - [Ajn](#ajn)
-    - [คำสรรพนามเชื่อมความ](#คำสรรพนามเชอมความ)
-  - [19. การสร้างคำ (Vortfarado)](#19-การสรางคำ-vortfarado)
-  - [20. อุปสรรคและปัจจัย (Prefiksoj kaj Sufiksoj)](#20-อปสรรคและปจจย-prefiksoj-kaj-sufiksoj)
-    - [อุปสรรค (Prefiksoj)](#อปสรรค-prefiksoj)
-    - [ปัจจัย (Sufiksoj)](#ปจจย-sufiksoj)
-<!-- TOC END -->
-
-
-
-
 
 ---
 
