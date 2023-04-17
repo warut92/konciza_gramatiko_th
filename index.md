@@ -51,11 +51,7 @@ window.onload = function () {
 
 </script>
 <div id='console'></div>
-    <div id="toc">
-        <h3>สารบัญ</h3>
-    </div>
-    <hr/>
-    <div id="contents">
+<div id="contents">
 
 # ไวยากรณ์ภาษาเอสเปรันโต โดยสังเขป
 ## Konciza Gramatiko de Esperanto
